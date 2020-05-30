@@ -22,7 +22,12 @@ while True:
 
     url = "http://thumbs.elisaviihde.fi/thumbnails/" + numba + "_655x368.jpg"
 
-    urllib.request.urlretrieve(url, name)
-
-    print("Valmista!")
-    print(" ")
+    
+    try:
+        urllib.request.urlretrieve(url, name)
+    except:
+        print("Kuvan lataus epäonnistui. Tarkista että numerot ovat oikein.")
+        print("")
+    else:
+        print("Valmista!")
+        print(" ")
